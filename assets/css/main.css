@@ -236,9 +236,6 @@ h6 {
     align-items: center;
   }
 
-  .navmenu li {
-    position: relative;
-  }
 
   .navmenu a,
   .navmenu a:focus {
@@ -770,13 +767,15 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/img/about/image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  padding: 100px 0;
+
 }
 
 .hero::after {
@@ -786,7 +785,6 @@ section,
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 10px);
   z-index: 1;
 }
 
@@ -827,30 +825,62 @@ section,
 }
 
 .hero .main-heading h1 {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 0.2;
   letter-spacing: -1px;
   margin: 0;
+  position: relative;
+  margin-left: 550px;
+}
+
+@media (max-width: 1400px) {
+  .hero .main-heading h1 {
+    font-size: 3.5rem;
+    margin-left: 400px;
+  }
 }
 
 @media (max-width: 1200px) {
   .hero .main-heading h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    margin-left: 320px;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
   .hero .main-heading h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    margin-left: 330px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 990px) {
   .hero .main-heading h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    margin-left: 220px;
+    margin-top: 100px;
   }
 }
+
+@media (max-width: 768px) {
+  .hero .main-heading h1 {
+    font-size: 3.5rem;
+    margin-left: 140px;
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero .main-heading h1 {
+    font-size: 3.5rem;
+    margin-left: 110px;
+    margin-top: 100px;
+  }
+}
+
+
+
 
 .hero .divider {
   width: 60%;
@@ -3773,9 +3803,3 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
