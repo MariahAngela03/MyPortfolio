@@ -3796,3 +3796,97 @@ section,
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Container for the icon */
+.achievement-icon {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  margin-bottom: 20px;
+  perspective: 1000px; /* needed for 3D effect */
+  cursor: pointer;
+}
+
+/* Both front and back faces */
+.achievement-icon > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+}
+
+/* Front face style */
+.achievement-icon .front {
+  z-index: 2;
+  /* front face stays unrotated */
+  transform: rotateY(0deg);
+}
+
+/* Back face style */
+.achievement-icon .back {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: rotateY(180deg);
+}
+
+/* Icon font size */
+.achievement-icon i {
+  font-size: 28px;
+}
+
+/* Flip effect on hover of the achievement-card */
+.achievement-card:hover .achievement-icon .front {
+  transform: rotateY(180deg);
+}
+
+.achievement-card:hover .achievement-icon .back {
+  transform: rotateY(0deg);
+}
+
+.achievement-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover effect for interactivity */
+.achievement-card:hover {
+  transform: translateY(-6px); /* subtle lift */
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.15); /* deeper shadow */
+  cursor: pointer;
+}
+
+/* Achievement card heading */
+.achievement-card h5 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+
+/* Make all columns the same height using Flexbox */
+#achievements .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Ensure all columns take equal height */
+#achievements .col-md-6,
+#achievements .col-lg-6 {
+  display: flex;
+}
