@@ -3890,3 +3890,50 @@ section,
 #achievements .col-lg-6 {
   display: flex;
 }
+
+
+.swiper-wrapper, .swiper-slide {
+  height: 350px !important; /* fixed height example */
+}
+
+
+
+
+/* Large desktops */
+@media (min-width: 1400px) {
+  .swiper-wrapper, .swiper-slide {
+    height: 300px !important;
+  }
+}
+
+/* Large desktops */
+@media (max-width: 1200px) {
+  .swiper-wrapper, .swiper-slide {
+    height: 400px !important;
+  }
+}
+
+
+@media (max-width: 990px) {
+  .swiper-wrapper, .swiper-slide {
+    height: 350px !important;
+    margin-top: 10px; /* adjust this value as needed */
+  }
+}
+
+@media (max-width: 767px) {
+  .swiper-wrapper, .swiper-slide {
+    height: 250px !important;
+    margin-top: 10px; /* adjust this value as needed */
+  }
+}
+
+@media (max-width: 600px) {
+  .swiper-wrapper, .swiper-slide {
+    height: 270px !important;
+    margin-top: 10px; /* adjust this value as needed */
+  }
+}
+
+
+
