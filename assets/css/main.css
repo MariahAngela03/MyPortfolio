@@ -4057,7 +4057,7 @@ section,
 /* Hover effect */
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  background-color: #ff6600;
+  background-color: #f3ce2a;
   transform: scale(1.1);
 }
 
