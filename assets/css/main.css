@@ -2820,29 +2820,31 @@ section,
   position: relative;
 }
 
-.portfolio-details .portfolio-details-media .main-image {
+.portfolio-details .portfolio-details-media  {
   margin-bottom: 1rem;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider {
-  position: relative;
+.portfolio-details .portfolio-details-media  .portfolio-details-slider {
+  height: auto;
+  min-height: 600px; /* Increase this */
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-wrapper {
-  height: auto !important;
+
+.portfolio-details .portfolio-details-media  .portfolio-details-slider {
+  height: 900px;
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-slide img {
-  aspect-ratio: 3/2;
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-slide img {
   object-fit: cover;
   width: 100%;
+  height: 100px;
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next,
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev {
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-next,
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-prev {
   background-color: var(--contrast-color);
   width: 40px;
   height: 40px;
@@ -2850,20 +2852,20 @@ section,
   transition: all 0.3s ease;
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next:after,
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev:after {
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-next:after,
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-prev:after {
   font-size: 16px;
   color: var(--accent-color);
   font-weight: bold;
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next:hover,
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev:hover {
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-next:hover,
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-prev:hover {
   background-color: var(--accent-color);
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next:hover:after,
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev:hover:after {
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-next:hover:after,
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-prev:hover:after {
   color: var(--contrast-color);
 }
 
@@ -3935,5 +3937,144 @@ section,
   }
 }
 
+.custom-modal {
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 1050;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.90);
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.custom-modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.custom-modal-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 0; /* remove rounded corners */
+  box-shadow: none; /* remove shadow */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-modal-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or use cover if you want to fill and crop */
+  user-select: none;
+  pointer-events: none; /* so clicks pass through if needed */
+}
+
+.custom-close {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  z-index: 1100; /* Ensure it's above the modal image */
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-close:hover {
+  color: #ccc;
+}
 
 
+    .portfolio-details {
+      padding: 60px 0;
+    }
+
+.swiper-2 {
+  width: 100%;
+  height: 700px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+}
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+      color: #000;
+    }
+
+    .portfolio-details-content h2.project-title {
+      margin-top: 20px;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .feature-list li {
+      margin-bottom: 10px;
+    }
+
+    .swiper-wrapper {
+  height: 100%; /* Make wrapper take full height of .swiper */
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+/* Resize default Swiper arrows */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px; /* smaller arrow */
+  color: #fff;
+}
+
+/* Hover effect */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #ff6600;
+  transform: scale(1.1);
+}
+
+/* Optional: adjust positioning */
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+
+.swiper-image {
+  width: 100%;
+  height: 80%;
+  object-fit: contain; /* Show the whole image without cropping */
+  display: block;
+  margin: auto;
+}
