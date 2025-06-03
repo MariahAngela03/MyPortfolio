@@ -3988,6 +3988,10 @@ section,
   font-weight: bold;
   cursor: pointer;
   user-select: none;
+
+    background-color: rgb(54, 53, 53);     /* Black background */
+  padding: 1px 13px;           /* Padding around the 'X' */
+  border-radius: 15px;          /* Rounded corners */
 }
 
 .custom-close:hover {
@@ -4029,7 +4033,7 @@ section,
       margin-bottom: 10px;
     }
 
-    .swiper-wrapper {
+.swiper-wrapper {
   height: 100%; /* Make wrapper take full height of .swiper */
 }
 
@@ -4078,3 +4082,42 @@ section,
   display: block;
   margin: auto;
 }
+
+.swiper-3 {
+  width: 100%;
+  height: 300px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+}
+
+.swiper-image2 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Show the whole image without cropping */
+  display: block;
+  margin: auto;
+}
+
+.swiper-4 {
+  width: 100%;
+  height: 480px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+}
+
+.swiper-image4 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  transform: translateY(-300px); /* Moves image 20px up */
+}
+
+
+
+
+
+
