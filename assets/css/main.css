@@ -3804,10 +3804,12 @@ section,
   width: 60px;
   height: 60px;
   position: relative;
-  margin-bottom: 20px;
-  perspective: 1000px; /* needed for 3D effect */
+  margin-bottom: 0;       /* remove bottom margin to avoid spacing issues */
+  perspective: 1000px;
   cursor: pointer;
+  flex-shrink: 0;         /* prevent it from shrinking */
 }
+
 
 /* Both front and back faces */
 .achievement-icon > div {
@@ -4106,6 +4108,9 @@ section,
   overflow: hidden;
   margin-top: 130px; /* Adjust this value as needed */
 }
+  .swiper-image6 {
+  transform: translateY(90px); /* Moves image 20px up */
+  }
 
 .swiper-image4 {
   width: 100%;
@@ -4123,6 +4128,7 @@ section,
   .swiper-image4 {
       transform: translateY(-300px); /* Moves image 20px up */
   }
+  
 }
 
 /* Large desktops */
@@ -4130,6 +4136,7 @@ section,
   .swiper-image4 {
       transform: translateY(-300px); /* Moves image 20px up */
   }
+
 }
 
 
@@ -4137,6 +4144,7 @@ section,
   .swiper-image4 {
   transform: translateY(-300px); /* Moves image 20px up */
   }
+
 }
 
 @media (max-width: 767px) {
@@ -4164,6 +4172,7 @@ section,
   transform: translateY(-265px); /* Moves image 20px up */
   }
 }
+
 
 @media (max-width: 990px) {
 .swiper-4 {
@@ -4243,11 +4252,77 @@ section,
 }
 }
 
+@media (max-width: 1398px) {
+  .swiper-image6 {
+  transform: translateY(45px); /* Moves image 20px up */
+  }
+}
+
+@media (max-width: 1200px) {
+  .swiper-image6 {
+  transform: translateY(57px); /* Moves image 20px up */
+  }
+}
+
+@media (max-width: 990px) {
+  .swiper-image6 {
+  transform: translateY(80px); /* Moves image 20px up */
+  }
+}
 
 
+@media (max-width: 764px) {
+  .swiper-image6 {
+  transform: translateY(45px); /* Moves image 20px up */
+  }
+}
+
+.swiper-pagination-bullet {
+  background: #999;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #25303c; /* or any primary theme color */
+}
+
+.custom-pagination {
+  transform: translateY(1220px);
+padding-left: 437px;
+}
+
+@media (max-width: 1398px) {
+  .custom-pagination {
+  transform: translateY(1235px); /* Moves image 20px up */
+  padding-left: 380px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .custom-pagination {
+  transform: translateY(1335px); /* Moves image 20px up */
+    padding-left: 320px;
+  }
+}
+
+@media (max-width: 990px) {
+  .custom-pagination {
+  transform: translateY(1980px); /* Moves image 20px up */
+      padding-left: 1px;
+  }
+}
 
 
+@media (max-width: 764px) {
+  .custom-pagination {
+  transform: translateY(1885px); /* Moves image 20px up */
+  }
+}
 
-
+@media (max-width: 600px) {
+  .custom-pagination {
+  transform: translateY(1900px); /* Moves image 20px up */
+  }
+}
 
 
