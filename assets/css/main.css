@@ -867,7 +867,7 @@ section,
   }
 }
 
-@media (min-width: 100px) and (max-width: 480px) {
+@media (min-width: 100px) and (max-width: 599px) {
   .hero .main-heading h1 {
     font-size: 3rem;
     margin-left: 100px;
@@ -3981,7 +3981,7 @@ section,
   }
 }
 
-@media (min-width: 100px) and (max-width: 480px) {
+@media (min-width: 100px) and (max-width: 599px) {
   .swiper-wrapper, .swiper-slide {
     height: 370px !important;
     margin-top: 10px; /* adjust this value as needed */
@@ -4061,7 +4061,7 @@ section,
   overflow: hidden;
 }
 
-@media (min-width: 100px) and (max-width: 480px) {
+@media (min-width: 100px) and (max-width: 599px) {
   .swiper-2 {
   width: 100%;
   height: 500px; /* Fixed height */
@@ -4268,7 +4268,7 @@ section,
   }
 }
 
-@media (min-width: 100px) and (max-width: 480px) {
+@media (min-width: 100px) and (max-width: 599px) {
 .swiper-4 {
   width: 100%;
   height: 315px; /* Fixed height */
@@ -4323,7 +4323,7 @@ section,
 }
 }
 
-@media (min-width: 100px) and (max-width: 480px) {
+@media (min-width: 100px) and (max-width: 599px) {
 .swiper-3 {
   width: 100%;
   height: 300px; /* Fixed height */
@@ -4405,7 +4405,7 @@ padding-left: 437px;
   transform: translateY(1900px); /* Moves image 20px up */
   }
 }
-@media (min-width: 100px) and (max-width: 480px) {
+@media (min-width: 100px) and (max-width: 599px) {
   .custom-pagination {
   transform: translateY(2000px); /* Moves image 20px up */
   }
