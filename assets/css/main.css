@@ -4376,3 +4376,7 @@ padding-left: 437px;
   transform: translateY(-200px); /* Moves image 20px up */
   }
 }
+
+.match-yellow {
+  color: #ffc107;
+}
