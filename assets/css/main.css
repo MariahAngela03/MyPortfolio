@@ -867,7 +867,7 @@ section,
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .hero .main-heading h1 {
     font-size: 3rem;
     margin-left: 50px;
