@@ -1,16 +1,4 @@
-/**
-* Template Name: Strategy
-* Template URL: https://bootstrapmade.com/strategy-bootstrap-agency-template/
-* Updated: May 09 2025 with Bootstrap v5.3.6
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
-/* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Nunito Sans",  sans-serif;
@@ -1906,7 +1894,7 @@ section,
 .testimonials .testimonial-item .featured-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   position: absolute;
   top: 0;
   left: 0;
@@ -2832,29 +2820,31 @@ section,
   position: relative;
 }
 
-.portfolio-details .portfolio-details-media .main-image {
+.portfolio-details .portfolio-details-media  {
   margin-bottom: 1rem;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider {
-  position: relative;
+.portfolio-details .portfolio-details-media  .portfolio-details-slider {
+  height: auto;
+  min-height: 600px; /* Increase this */
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-wrapper {
-  height: auto !important;
+
+.portfolio-details .portfolio-details-media  .portfolio-details-slider {
+  height: 900px;
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-slide img {
-  aspect-ratio: 3/2;
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-slide img {
   object-fit: cover;
   width: 100%;
+  height: 100px;
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next,
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev {
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-next,
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-prev {
   background-color: var(--contrast-color);
   width: 40px;
   height: 40px;
@@ -2862,20 +2852,20 @@ section,
   transition: all 0.3s ease;
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next:after,
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev:after {
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-next:after,
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-prev:after {
   font-size: 16px;
   color: var(--accent-color);
   font-weight: bold;
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next:hover,
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev:hover {
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-next:hover,
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-prev:hover {
   background-color: var(--accent-color);
 }
 
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next:hover:after,
-.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev:hover:after {
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-next:hover:after,
+.portfolio-details .portfolio-details-media  .portfolio-details-slider .swiper-button-prev:hover:after {
   color: var(--contrast-color);
 }
 
@@ -3807,4 +3797,586 @@ section,
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Container for the icon */
+.achievement-icon {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  margin-bottom: 0;       /* remove bottom margin to avoid spacing issues */
+  perspective: 1000px;
+  cursor: pointer;
+  flex-shrink: 0;         /* prevent it from shrinking */
+}
+
+
+/* Both front and back faces */
+.achievement-icon > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+}
+
+/* Front face style */
+.achievement-icon .front {
+  z-index: 2;
+  /* front face stays unrotated */
+  transform: rotateY(0deg);
+}
+
+/* Back face style */
+.achievement-icon .back {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: rotateY(180deg);
+}
+
+/* Icon font size */
+.achievement-icon i {
+  font-size: 28px;
+}
+
+/* Flip effect on hover of the achievement-card */
+.achievement-card:hover .achievement-icon .front {
+  transform: rotateY(180deg);
+}
+
+.achievement-card:hover .achievement-icon .back {
+  transform: rotateY(0deg);
+}
+
+.achievement-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover effect for interactivity */
+.achievement-card:hover {
+  transform: translateY(-6px); /* subtle lift */
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.15); /* deeper shadow */
+  cursor: pointer;
+}
+
+/* Achievement card heading */
+.achievement-card h5 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+
+/* Make all columns the same height using Flexbox */
+#achievements .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Ensure all columns take equal height */
+#achievements .col-md-6,
+#achievements .col-lg-6 {
+  display: flex;
+}
+
+
+.swiper-wrapper, .swiper-slide {
+  height: 350px !important; /* fixed height example */
+}
+
+
+
+
+/* Large desktops */
+@media (min-width: 1400px) {
+  .swiper-wrapper, .swiper-slide {
+    height: 300px !important;
+  }
+}
+
+/* Large desktops */
+@media (max-width: 1200px) {
+  .swiper-wrapper, .swiper-slide {
+    height: 400px !important;
+  }
+}
+
+
+@media (max-width: 990px) {
+  .swiper-wrapper, .swiper-slide {
+    height: 350px !important;
+    margin-top: 10px; /* adjust this value as needed */
+  }
+}
+
+@media (max-width: 767px) {
+  .swiper-wrapper, .swiper-slide {
+    height: 250px !important;
+    margin-top: 10px; /* adjust this value as needed */
+  }
+}
+
+@media (max-width: 600px) {
+  .swiper-wrapper, .swiper-slide {
+    height: 270px !important;
+    margin-top: 10px; /* adjust this value as needed */
+  }
+}
+
+.custom-modal {
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 1050;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.90);
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.custom-modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.custom-modal-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 0; /* remove rounded corners */
+  box-shadow: none; /* remove shadow */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-modal-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or use cover if you want to fill and crop */
+  user-select: none;
+  pointer-events: none; /* so clicks pass through if needed */
+}
+
+.custom-close {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  z-index: 1100; /* Ensure it's above the modal image */
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+
+    background-color: rgb(54, 53, 53);     /* Black background */
+  padding: 1px 13px;           /* Padding around the 'X' */
+  border-radius: 15px;          /* Rounded corners */
+}
+
+.custom-close:hover {
+  color: #ccc;
+}
+
+
+    .portfolio-details {
+      padding: 60px 0;
+    }
+
+.swiper-2 {
+  width: 100%;
+  height: 700px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+}
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+      color: #000;
+    }
+
+    .portfolio-details-content h2.project-title {
+      margin-top: 20px;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .feature-list li {
+      margin-bottom: 10px;
+    }
+
+.swiper-wrapper {
+  height: 100%; /* Make wrapper take full height of .swiper */
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+/* Resize default Swiper arrows */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px; /* smaller arrow */
+  color: #fff;
+}
+
+/* Hover effect */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #f3ce2a;
+  transform: scale(1.1);
+}
+
+/* Optional: adjust positioning */
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+
+.swiper-image {
+  width: 100%;
+  height: 80%;
+  object-fit: contain; /* Show the whole image without cropping */
+  display: block;
+  margin: auto;
+}
+
+.swiper-3 {
+  width: 100%;
+  height: 480px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+}
+
+.swiper-image2 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Show the whole image without cropping */
+  display: block;
+  margin: auto;
+}
+
+.swiper-4 {
+  width: 100%;
+  height: 480px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+}
+  .swiper-image6 {
+  transform: translateY(90px); /* Moves image 20px up */
+  }
+
+.swiper-image4 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  transform: translateY(-300px); /* Moves image 20px up */
+}
+
+
+
+/* Large desktops */
+@media (min-width: 1400px) {
+  .swiper-image4 {
+      transform: translateY(-300px); /* Moves image 20px up */
+  }
+  
+}
+
+/* Large desktops */
+@media (max-width: 1200px) {
+  .swiper-image4 {
+      transform: translateY(-300px); /* Moves image 20px up */
+  }
+
+}
+
+
+@media (max-width: 990px) {
+  .swiper-image4 {
+  transform: translateY(-300px); /* Moves image 20px up */
+  }
+
+}
+
+@media (max-width: 767px) {
+  .swiper-image4 {
+  transform: translateY(-300px); /* Moves image 20px up */
+  }
+}
+
+@media (max-width: 600px) {
+  .swiper-image4 {
+  transform: translateY(-267px); /* Moves image 20px up */
+  }
+}
+
+@media (max-width: 1398px) {
+.swiper-4 {
+  width: 100%;
+  height: 340px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+}
+
+  .swiper-image4 {
+  transform: translateY(-265px); /* Moves image 20px up */
+  }
+}
+
+
+@media (max-width: 990px) {
+.swiper-4 {
+  width: 100%;
+  height: 550px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+}
+}
+
+
+@media (max-width: 990px) {
+.swiper-4 {
+  width: 100%;
+  height: 550px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+}
+}
+
+@media (max-width: 764px) {
+.swiper-4 {
+  width: 100%;
+  height: 370px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+  
+}
+  .swiper-image4 {
+  transform: translateY(-265px); /* Moves image 20px up */
+  }
+}
+
+
+
+@media (max-width: 1398px) {
+.swiper-3 {
+  width: 100%;
+  height: 340px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+}
+}
+
+@media (max-width: 990px) {
+.swiper-3 {
+  width: 100%;
+  height: 550px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+}
+}
+
+
+@media (max-width: 990px) {
+.swiper-3 {
+  width: 100%;
+  height: 550px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+}
+}
+
+@media (max-width: 764px) {
+.swiper-3 {
+  width: 100%;
+  height: 370px; /* Fixed height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px; /* Adjust this value as needed */
+}
+}
+
+@media (max-width: 1398px) {
+  .swiper-image6 {
+  transform: translateY(45px); /* Moves image 20px up */
+  }
+}
+
+@media (max-width: 1200px) {
+  .swiper-image6 {
+  transform: translateY(57px); /* Moves image 20px up */
+  }
+}
+
+@media (max-width: 990px) {
+  .swiper-image6 {
+  transform: translateY(80px); /* Moves image 20px up */
+  }
+}
+
+
+@media (max-width: 764px) {
+  .swiper-image6 {
+  transform: translateY(45px); /* Moves image 20px up */
+  }
+}
+
+.swiper-pagination-bullet {
+  background: #999;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #25303c; /* or any primary theme color */
+}
+
+.custom-pagination {
+  transform: translateY(1220px);
+padding-left: 437px;
+}
+
+@media (max-width: 1398px) {
+  .custom-pagination {
+  transform: translateY(1235px); /* Moves image 20px up */
+  padding-left: 380px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .custom-pagination {
+  transform: translateY(1335px); /* Moves image 20px up */
+    padding-left: 320px;
+  }
+}
+
+@media (max-width: 990px) {
+  .custom-pagination {
+  transform: translateY(1980px); /* Moves image 20px up */
+      padding-left: 1px;
+  }
+}
+
+
+@media (max-width: 764px) {
+  .custom-pagination {
+  transform: translateY(1885px); /* Moves image 20px up */
+  }
+}
+
+@media (max-width: 600px) {
+  .custom-pagination {
+  transform: translateY(1900px); /* Moves image 20px up */
+  }
+}
+
+
+.swiper-image5 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  transform: translateY(-259px); /* Moves image 20px up */
+}
+
+/* Large desktops */
+@media (min-width: 1400px) {
+  .swiper-image5 {
+      transform: translateY(-259px); /* Moves image 20px up */
+  }
+  
+}
+
+/* Large desktops */
+@media (max-width: 1200px) {
+  .swiper-image5 {
+      transform: translateY(-190px); /* Moves image 20px up */
+  }
+
+}
+
+
+@media (max-width: 990px) {
+  .swiper-image5 {
+  transform: translateY(-300px); /* Moves image 20px up */
+  }
+
+}
+
+@media (max-width: 767px) {
+  .swiper-image5 {
+  transform: translateY(-245px); /* Moves image 20px up */
+  }
+}
+
+@media (max-width: 600px) {
+  .swiper-image5 {
+  transform: translateY(-245px); /* Moves image 20px up */
+  }
+}
+
+@media (max-width: 530px) {
+  .swiper-image5 {
+  transform: translateY(-200px); /* Moves image 20px up */
+  }
+}
+
+.match-yellow {
+  color: #ffc107;
 }
